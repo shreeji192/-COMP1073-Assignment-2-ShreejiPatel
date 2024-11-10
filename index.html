@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Your Smoothie</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Order Your Smoothie</h1>
+    
+
+        <div class="order-form-wrapper">
+            <!-- Smoothie Order Form -->
+            <form id="smoothie-form">
+                <div class="form-group">
+                    <label for="size">Size:</label>
+                    <select id="size" name="size">
+                        <option value="small">Small</option>
+                        <option value="medium">Medium</option>
+                        <option value="large">Large</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <fieldset>
+                        <legend>Ingredients</legend>
+                        <label><input type="checkbox" name="ingredient" value="banana" data-price="1.00"> Banana</label>
+                        <label><input type="checkbox" name="ingredient" value="strawberry" data-price="1.50"> Strawberry</label>
+                        <label><input type="checkbox" name="ingredient" value="blueberry" data-price="1.50"> Blueberry</label>
+                        <label><input type="checkbox" name="ingredient" value="spinach" data-price="1.00"> Spinach</label>
+                        <label><input type="checkbox" name="ingredient" value="almond milk" data-price="0.50"> Almond Milk</label>
+                    </fieldset>
+                </div>
+            </form>
+        </div>
+    </div>
+            
+</body>
+            
+</html>
