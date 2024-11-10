@@ -33,6 +33,52 @@
                         <label><input type="checkbox" name="ingredient" value="almond milk" data-price="0.50"> Almond Milk</label>
                     </fieldset>
                 </div>
+                <div class="form-group">
+                    <label for="extras">Extras:</label>
+                    <select id="extras" name="extras">
+                        <option value="none">None</option>
+                        <option value="protein">Protein Powder</option>
+                        <option value="chia">Chia Seeds</option>
+                        <option value="honey">Honey</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="sweetener">Sweetener:</label>
+                    <select id="sweetener" name="sweetener">
+                        <option value="none">None</option>
+                        <option value="honey">Honey</option>
+                        <option value="agave">Agave Syrup</option>
+                        <option value="sugar-free">Sugar-free Sweetener</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <fieldset>
+                        <legend>Toppings</legend>
+                        <label><input type="checkbox" name="topping" value="granola" data-price="0.50"> Granola</label>
+                        <label><input type="checkbox" name="topping" value="coconut flakes" data-price="0.50"> Coconut Flakes</label>
+                        <label><input type="checkbox" name="topping" value="cocoa nibs" data-price="0.75"> Cocoa Nibs</label>
+                    </fieldset>
+                </div>
+
+                <div class="form-group">
+                    <label for="blending-style">Blending Style:</label>
+                    <select id="blending-style" name="blending-style">
+                        <option value="smooth">Smooth</option>
+                        <option value="chunky">Chunky</option>
+                    </select>
+                </div>
+
+                <button type="button" id="order-btn">Order</button>
+            </form>
+
+            <!-- Smoothie Order Summary Display -->
+            <div id="order-summary">
+                <h3>Your Smoothie:</h3>
+                <p id="order-description"></p>
+                <p id="order-price"></p>
+            </div>
             </form>
         </div>
     </div>
