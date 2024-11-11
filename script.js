@@ -17,3 +17,40 @@ class Smoothie {
 
         return (basePrice + ingredientCost + extraCost + sweetenerCost + toppingCost).toFixed(2);
     }
+    getDescription() {
+        const ingredientList = this.ingredients.map(ing => ing.name).join(", ");
+        const toppingList = this.toppings.map(topping => topping.name).join(", ");
+        
+        return `
+            Size: ${this.size}<br>
+            Ingredients: ${ingredientList}<br>
+            Extras: ${this.extras}<br>
+            Sweetener: ${this.sweetener}<br>
+            Toppings: ${toppingList}<br>
+            Blending Style: ${this.blendingStyle}
+        `;
+    }
+}
+
+document.getElementById("order-btn").addEventListener("click", function() {
+    const size = document.getElementById("size").value;
+    const ingredientElements = document.querySelectorAll("input[name='ingredient']:checked");
+    const ingredients = Array.from(ingredientElements).map(element => ({
+        name: element.value,
+        price: element.dataset.price
+    }));
+    const extras = document.getElementById("extras").value;
+    const sweetener = document.getElementById("sweetener").value;
+    const blendingStyle = document.getElementById("blending-style").value;
+
+    const toppingElements = document.querySelectorAll("input[name='topping']:checked");
+    const toppings = Array.from(toppingElements).map(element => ({
+        name: element.value,
+        price: element.dataset.price
+    }));
+
+    const smoothie = new Smoothie(size, ingredients, extras, sweetener, toppings, blendingStyle);
+
+    document.getElementById("order-description").innerHTML = smoothie.getDescription();
+    document.getElementById("order-price").innerHTML = `<strong>Total Price: $${smoothie.calculatePrice()}</strong>`;
+});
